@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: CrazyMilk's blog
-subtitle: 热爱生活的曾庆淼小帅锅
-description: 华南理工大学12级软件工程，在默默地等待着读研~
-author: CrazyMilk
-email: CatDringMilk@outlook.com
+title: skybluefly's blog
+subtitle: 菜鸟小前端
+description: 菜鸟小前端不断前进中~
+author: skybluefly
+email: 271688304@qq.com
 language: zh-Hans
-keywords: CrazyMilk
+keywords: skybluefly
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://github.com/CrazyMilk
+url: http://codeliker.com/
 root: /
 permalink: :year/:month/:day/:title/
 
@@ -81,14 +81,26 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: yilia
+theme: next
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:CrazyMilk/CrazyMilk.github.io.git
+  repo: git@github.com:skybluefly/skybluefly.github.io.git
   branch: master
 
 
-duoshuo_shortname: crazymilk.duoshuo.com
+duoshuo_shortname: skybluefly
+duoshuo_share: true
+baidu_analytics: 051bbaf516e23338fbd3167aa207f2e1
+
+search:
+  path: search.xml
+  field: post
+
+# 网站地图
+# sitemap:
+# path: sitemap.xml
+baidusitemap:
+path: baidusitemap.xml

@@ -1,0 +1,250 @@
+layout: false
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+.box {
+    overflow: hidden;
+    ;
+    border: 1px solid #ccc;
+    padding: 30px;
+    width: 553px;
+    height: 500px;
+}
+
+.method {
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    float: left;
+    width: 550px;
+    background-color: #F9CC9D;
+    height: 100%;
+}
+
+.method li {
+    float: left;
+    cursor: pointer;
+    margin: 10px 10px 0 0;
+    background-color: skyblue;
+    padding: 10px;
+    color: #fff;
+}
+
+.method li.active {
+    background-color: red;
+}
+
+.method0 {
+    display: table!important;
+    height: 100%;
+}
+
+.method0 .child {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.method1 {
+    line-height: 500px;
+    height: 500px;
+}
+
+.method1 .child {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 20px;
+}
+
+.method2 {
+    height: 500px;
+}
+
+.method2 .child {
+    vertical-align: middle;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 400px;
+}
+
+.method2 span {
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+    display: inline-block
+}
+
+.method3 {
+    position: relative;
+    height: 100%;
+}
+
+.method3 .child {
+    position: absolute;
+    top: 0;
+    bottom: 0px;
+    margin: auto;
+    height: 60px;
+}
+
+.method4 {
+    position: relative;
+    height: 100%;
+}
+
+.method4 .child {
+    position: absolute;
+    top: 50%;
+    height: 60px;
+    margin-top: -30px;
+}
+
+.method5 {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.method5 .child {
+    display: table-cell;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+.method5 p {
+    position: relative;
+    top: -50%;
+    left: -50%;
+}
+
+.method6 {
+    position: relative;
+    height: 100%;
+}
+
+.method6 .child {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+{
+    position: relative;
+}
+
+#img {
+    height: 500px;
+}
+button {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: none;
+}
+
+.method7 {
+    line-height: 500px;
+    height: 500px;
+}
+
+.method7 img {
+    vertical-align: middle;
+}
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="show">
+                <div id="father">
+                    <div class="child">
+                        <p>文字文字文字文字文字文字文字文字文字文字文字文字文</p>
+                    </div>
+                    <span></span>
+                </div>
+                <div id="img"  class="hide">
+                    <img src="http://codeliker.com/images/avatar.gif" alt="" width="200" height="200">
+                </div>
+            </div>
+        </div>
+        <ul class="method">
+            <li>方法1</li>
+            <li>方法2</li>
+            <li>方法3</li>
+            <li>方法4</li>
+            <li>方法5</li>
+            <li>方法6</li>
+            <li>方法7</li>
+            <li>方法8</li>
+            <li>方法9</li>
+        </ul>
+    </div>
+    <script src="http://static.huizecdn.com/js/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>
+    $('.method li').click(function() {
+        var index = $(this).index();
+        $(this).addClass('active').siblings('li').removeClass('active');
+
+        if (index < 7) {
+            $('#father').show();
+            $('#img').hide()
+            if ($('#father').attr('class') != "") {
+                $('#father').attr('class', "");
+            };
+            $('#father').addClass("method" + index);
+        } else {
+            $('#father').hide();
+            $('#img').show()
+        };
+        if (index == 7) {
+            $("#img img").wrap('<button></button>')
+        };
+        if (index == 8) {
+            if ($("#img img").parent().is("button")) {
+                $("#img img").unwrap();
+
+            }
+            $("#img").addClass('method7')
+        };
+
+
+    });
+    </script>
+</body>
+
+</html>
